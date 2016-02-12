@@ -28,19 +28,15 @@
   "content_scripts": [
     {
       "matches": [
-        "https://www.google.com/*"
-      ],
-      "css": [
-        "src/inject/inject.css"
-      ]
-    },
-    {
-      "matches": [
-        "https://www.google.com/*"
+        "https://my.sa.ucsb.edu/gold/StudentSchedule.aspx/*"
       ],
       "js": [
-        "src/inject/inject.js"
+        "src/inject/inject.js",
+        "js/jquery/jquery.min.js"
       ]
     }
-  ]
+  ],
+   "web_accessible_resources": [
+       "UCSB_largemap.jpg"
+     ]
 }
