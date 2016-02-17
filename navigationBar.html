@@ -23,11 +23,15 @@
            text-decoration: none;
        }
        
-       a:hover:not(.active) {
+       a:hover:not(.all) {
            background-color: #111;
        }
        
-       .active {
+       a:active {
+           background-color: #111;
+       }
+       
+       .all {
            background-color: #2504B4;
        }
     </style>
@@ -35,29 +39,36 @@
 <body>
     <ul>
         <li>
-            <a class="active" href="#all">All</a>
+            <a class="all">All</a>
         </li>
         <li>
-            <a href="#monday">Mon</a>
+            <a id="mon" href="#mon">Mon</a>
         </li>
         <li>
-            <a href="#tuesday">Tue</a>
+            <a id="tue" href="#tue">Tue</a>
         </li>
         <li>
-            <a href="#wednesday">Wed</a>
+            <a id="wed" href="#wed">Wed</a>
         </li>
         <li>
-            <a href="#thursday">Thu</a>
+            <a id="thu" href="#thu">Thu</a>
         </li>
         <li>
-            <a href="#friday">Fri</a>
+            <a id="fri" href="#fri">Fri</a>
         </li>
         <li>
-            <a href="#saturday">Sat</a>
+            <a id="sat" href="#sat">Sat</a>
         </li>
         <li>
-            <a href="#sunday">Sun</a>
+            <a id="sun" href="#sun">Sun</a>
         </li>
     </ul>
+    
+    <script>
+        function myFunction() {
+             document.getElementById()
+        }
+    </script>
+    
 </body>
 </html>
