@@ -28,7 +28,8 @@
                 position: absolute;
                 top: 20px;
                 right: 45px;
-                font-size: 60px !important;
+                font-size: 40px !important;
+                color: rgb(211,211,211);
             }
             
             @media screen and (max height: 450px) {
@@ -47,7 +48,7 @@
         <div id="myNav" class="overlay">
             
             <!-- Button to close the overlay navigation -->
-            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>>
+            <a href="#" class="closebtn" onclick="closeNav()">x</a>
             
             <div class="overlay-content">
                 <!-- Add map, nav bar, and side bar here -->
@@ -55,7 +56,9 @@
         
         </div>
         
-        <span style="font-size:30px;cursor:pointer" onclick="openNav()">-> Open Map</span>
+        <span style="font-size:30px;cursor:pointer" onclick="openNav()">
+            <img src="MapViewIcon.jpg"/>
+        </span>
         
         <script>
             function openNav() {
