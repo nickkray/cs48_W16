@@ -10,8 +10,8 @@
                 z-index: 1; /* Sit on top */
                 left: 0;
                 top: 0;
-                background-color: rgb(0,0,0);
-                background-color: rgba(0, 0, 0, 0.9);
+                background-color: rgb(211,211,211);
+                background-color: rgba(211, 211, 211, 0.9);
                 overflow-x: hidden; /* Disable horizontal scroll */
                 transition: 0.5s;
             }
@@ -22,6 +22,38 @@
                 width: 100%;
                 text-align: center;
                 margin-top: 30px;
+            }
+            
+            .overlay-content:ul {
+                list-style-type: none;
+                margin: 0;
+                padding: 0;
+                overflow: hidden;
+                background-color: #333;
+            }
+            
+            .overlay-content:li {
+                float: left;
+            }
+            
+            .overlay-content:li:a {
+                display: block;
+                color: white;
+                text-align: center;
+                padding: 14px 16px;
+                text-decoration: none;
+            }
+            
+            .overlay-content:a:hover:not(.all) {
+                background-color: #111;
+            }
+            
+            .overlay-content:a:active {
+                background-color: #111;
+            }
+            
+            .all {
+                background-color: #2504B4;
             }
             
             .closebtn {
@@ -51,7 +83,32 @@
             <a href="#" class="closebtn" onclick="closeNav()">x</a>
             
             <div class="overlay-content">
-                <!-- Add map, nav bar, and side bar here -->
+                <ul>
+                    <li>
+                        <a class="all">All</a>
+                    </li>
+                    <li>
+                        <a href="#mon">Mon</a>
+                    </li>
+                    <li>
+                        <a href="#tue">Tue</a>
+                    </li>
+                    <li>
+                        <a href="#wed">Wed</a>
+                    </li>
+                    <li>
+                        <a href="#thu">Thu</a>
+                    </li>
+                    <li>
+                        <a href="#fri">Fri</a>
+                    </li>
+                    <li>
+                        <a href="#sat">Sat</a>
+                    </li>
+                    <li>
+                        <a href="#sun">Sun</a>
+                    </li>
+                </ul>
             </div>
         
         </div>
@@ -62,7 +119,8 @@
         
         <script>
             function openNav() {
-                document.getElementById("myNav").style.width = "100%";
+                document.getElementById("myNav").style.width = "75%";
+                //document.getElementById("myNav").style.height = "75%";
             }
             
             function closeNav() {
