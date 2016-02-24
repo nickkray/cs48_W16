@@ -7,6 +7,8 @@ chrome.extension.sendMessage({}, function(response) {
 		<img id='mapImg' style='position: absolute; width: 800px;' src='"+chrome.extension.getURL("UCSB_largemap.jpg")+"'>\
 		</div>").insertBefore("#content")
 
+		$('<input type="image" src="MapViewIcon.jpg" alt="Map View" style="height:24px;width:92px;">').insertAfter("#pageContent_weeklyButton")
+
 
 			$(".BuildingLocationLink").unbind()
 			$(".BuildingLocationLink").bind("click",function(){showMap(this.innerHTML)})
