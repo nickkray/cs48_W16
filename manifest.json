@@ -37,6 +37,7 @@
     }
   ],
    "web_accessible_resources": [
-       "UCSB_largemap.jpg"
+       "UCSB_largemap.jpg",
+       "MapViewIcon.jpg"
      ]
 }
