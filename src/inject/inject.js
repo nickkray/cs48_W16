@@ -7,11 +7,13 @@ chrome.extension.sendMessage({}, function(response) {
 		<img id='mapImg' style='position: absolute; width: 800px;' src='"+chrome.extension.getURL("UCSB_largemap.jpg")+"'>\
 		</div>").insertBefore("#content")
 
-		$('<input type="image" src="MapViewIcon.jpg" alt="Map View" style="height:24px;width:92px;">').insertAfter("#pageContent_weeklyButton")
-
+		$('<img id="MapViewIcon" src="'+chrome.extension.getURL("MapViewIcon.jpg")+'" alt="Map View" style="height:24px;width:92px;">').insertAfter("#pageContent_weeklyButton")
+		document.body.innerHTML=document.body.innerHTML.replace('<div class="title">Schedule-List</div>',"")
 
 			$(".BuildingLocationLink").unbind()
 			$(".BuildingLocationLink").bind("click",function(){showMap(this.innerHTML)})
+		
+		$("#MapViewIcon").bind("click",function(){showMap()})
 
 	}
 	}, 10);
