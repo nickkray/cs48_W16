@@ -1,91 +1,198 @@
+
 <html>
-	<head>
-		<style> 
-		#side {
-			position:absolute;
-			top: 0; bottom: 500px; left:0;
-			width:175px;
-			background: rgb(51, 51, 255);
-			font-size: 12px;
-			color: ffff00;
-			}
-		#title {
-			font-size: 16px;
-			
-		}	
-		<!-- #fancy { -->
-			<!-- border-style: solid; -->
-			<!-- border-color: #ffff00 #ffff00; -->
-		
-		#sidebar ul {
-			font-color: rgb(255,0,0);
-			background-color: rgb(51, 51, 255);
-			opacity:0.6;
-		}
+<head>
+<style> 
+
+#side {
+	position:absolute;
+	top: 0; bottom: 500px; left:0px;
+	width:177px;
+	background: rgb(51, 51, 255);
+	font-size: 12px;
+	color: ffff00;
+}
+
+.title {
+	font-size: 20px;
+	margin-bottm: 50px;	
+	Padding: 5px;
+	color: ffff00;
+	font: Garamond;
+}	
+
+.image {
+	position: absolute;
+	left: 177px; bottom: 500px;
+	width: 500px;
+	height: 500px;
+	border-bottom-color: rgb(51, 51, 255);
+
+}	
+.defaultBtn {
+	background-color: rgb(51,51,255);
+	color: black;
+	padding: 12px;
+	font-size: 14px;
+	border: none;
+	cursor: pointer;
+	font: Garamond;
+	width: 177px;
+}	
+
+
+.defaultBtn:hover, defaultBtn:focus {
+	background-color: ffff00;
+}
+.dropbtn {
+	background-color: rgb(51, 51, 255);
+	color: black;
+	padding: 12px;
+	font-size: 14px;
+	border: none;
+	cursor: pointer;
+	font: Garamond;
+	width: 177px
+}
+.dropbtn:hover, .dropbtn:focus {
+	background-color: ffff00;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+	display: none;
+    position: absolute;
+	z-index: 100;
+	left: 177px;
+    background-color: #f9f9f9;
+    max-width: 100px;
+    overflow: auto;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    
+}
+
+.dropdown-content a {
+	color: black;
+	padding: 12px 16px;
+	text-decoration: none;
+	display: block;
+	font: Garamond;
+}
+
+.dropdown-content a:hover  {
+	background-color: #ffff00;
 	
-		#special ul:hover{
-			background-color: rgb(51, 51, 255);
-		}
+}
 
-
-		.clearfix {
-			clear: both;
-		}
-		</style>
-	</head>
-	<body id="">
+		
+.show {display: block;}
+	
+</style>
+</head>
+	<body>
 	<div id="side">
-		<b><u id="title">
+		<h1 class="title">
+			<b><u>
 				Popular Locations
-		</b></u>
-		<ul id="fancy">
-				<li id=""> Bus Loop </li>
-				<li onclick="">
-					Dining Commons
-				</li>
-				<ul>
-					<li > Portola </li>
-					<li> De La Guerra </li>
-					<li> Ortega </li>
-					<li> Carillo </li>		
-				</ul>
-			</li>
-			<li> Recreation Center </li>
-			<li> Student Resourse Building </li>
+			</b></u>
+		</h1>
 			
-				
-			<li> Student Health </li>
-			<li> Campus Restaurants </li>
-				<ul>
-					<li> Courtyard Cafe </li>
-					<li> Subway </li>
-					
-					<li> Woodstock's </li>
-					<li> Root 217 </li>
-					<li> Wahoo's </li>
-					<li> Panda Express </li>
-					<li> Coral Tree Cafe </li>
-					<li> Romaine's </li>
-					<li> Santorini Island Grill</li>
-					<li> Nicoletti's </li>
-					<li> Jamba Juice </li>
-					<li> Corner Store </li>
-					<li> Die Bretzel </li>
-				
-				</ul>
-			<li>
+			<div class="dropdown">
+			<button onclick="dropDownFunc2()" class="dropbtn">
 					University Center 
-				</li>
-				<ul>
-					<li> The Hub </li>
-					<li> UCSB Bookstore </li>
-				</ul>
-			</li>
-			<li> Thunderdome </li>
-			<li>Harder Stadium </li>
+			</button>
+				<div id="myDropdown2" class="dropdown-content">
+					<a href="#" > The Hub </a>
+					<a href="#" > UCSB Bookstore </a>
+					<a href="#" > Corwin Pavillion </a>
+				</div>
+			</div>
 			
-		</ul>
-	</div>
+			<button class="defaultBtn" onclick=""> Bus Loop </button>
+			
+			
+			<button class="defaultBtn" onclick=""> Recreation Center </button>
+			
+			<div class="dropdown">
+				<button onclick="dropDownFunc()" class="dropbtn">
+					Dining Commons
+				</button>
+				<div id="myDropdown" class="dropdown-content">
+					
+					<a href="https://static.housing.ucsb.edu/menu/carrillo/thisweekmenu.pdf"> Carillo </a>
+					<a href="https://static.housing.ucsb.edu/menu/dlg/thisweekmenu.pdf"> De La Guerra </a>
+					<a href="https://static.housing.ucsb.edu/menu/ortega/thisweekmenu.pdf"> Ortega </a>
+					<a href="https://en.wikipedia.org/wiki/Toilet"> Portola </a>
+							
+				</div>
+			</div>
+			<button class="defaultBtn" onclick=""> Student Resourse Building </button>
+			<button class="defaultBtn" onclick=""> Student Health </button>
+			<button class="defaultBtn" onclick=""> Thunderdome </button>
+			<button class="defaultBtn" onclick="">Harder Stadium </button>
+			
+			<div class="dropdown">
+			 <button onclick="dropDownFunc3()" class="dropbtn">Campus Restaurants </button>
+			<div id="myDropdown3" class="dropdown-content">
+				<a href="#">Courtyard Cafe</a>
+				<a href="#">Coral Tree Cafe</a>
+				<a href="#CS">Corner Store </a>
+				<a href="#Bretz">Die Bretzel </a>
+				<a href="#JJ">Jamba Juice</a>
+				<a href="#">Nicoletti's</a>
+				<a href="#Panda">Panda Express </a>
+				<a href="#">Root 217</a>
+				<a href="#">Romaine's</a>
+				<a href="#">Santorini Island Grill</a>
+				<a href="#">Subway</a>
+				<a href="#">Woodstock's</a>
+				<a href="#">Wahoo's</a>				
+				
+			</div>
+			</div>
+			</div>
+	<div>
+		<img src="https://raw.githubusercontent.com/nickkray/cs48_W16/master/UCSB_largemap.jpg" class="image"> </img>
+			
+	<script>
+	
+/* When the user clicks on the button, 
+toggle between hiding and showing the dropdown content */
+function dropDownFunc() {
+    document.getElementById("myDropdown").classList.toggle("show");
+	var others = document.getElementsByClassName('dropdown-content');
+	for(int i = 0; i < others.length; i++){
+		if(others[i])
+	}
+}
 
-	</body>
+function dropDownFunc2() {
+    document.getElementById("myDropdown2").classList.toggle("show");
+}
+
+function dropDownFunc3() {
+    document.getElementById("myDropdown3").classList.toggle("show");
+}
+// Close the dropdown if the user clicks outside of it
+window.onclick = function(event) {
+  if (!event.target.matches('.dropbtn')) {
+    var dropdowns = document.getElementsByClassName("dropdown-content");
+    var i;
+    for (i = 0; i < dropdowns.length; i++) {
+      var openDropdown = dropdowns[i];
+      if (openDropdown.classList.contains('show')) {
+        openDropdown.classList.remove('show');
+      }
+    }
+  }
+
+}
+
+
+</script>
+
+</body>
 </html>
