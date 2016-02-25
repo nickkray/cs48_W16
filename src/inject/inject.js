@@ -2,24 +2,33 @@ chrome.extension.sendMessage({}, function(response) {
 	var readyStateCheckInterval = setInterval(function() {
 	if (document.readyState === "complete") {
 		clearInterval(readyStateCheckInterval);
+        
+            $("<div id='myNav' style='height: 100%; width: 0; position: fixed; z-index: 1; left: 0; top: 0; background-color: rgb(211,211,211); overflow-x: hidden; transition: 0.5s'>\
+            <img id='mapImg1' style='position: absolute; width: 1200 px;' src='"+chrome.extension.getURL("UCSB_largemap.jpg")+"'>\
+            <button id='closebtn' style='position: absolute; font-size: 40px; top: 20px; right: 45px; color: #111;'>x</button>\
+            </div>").insertAfter("#MainForm")
 
 			$("<div id='map' style='position: relative; display: none; background: rgb(230,230,230); width: 600px; height: 600px; overflow: auto; '>\
-		<img id='mapImg' style='position: absolute; width: 800px;' src='"+chrome.extension.getURL("UCSB_largemap.jpg")+"'>\
+		<img id='mapImg2' style='position: absolute; width: 800px;' src='"+chrome.extension.getURL("UCSB_largemap.jpg")+"'>\
 		</div>").insertBefore("#content")
 
 		$('<img id="MapViewIcon" src="'+chrome.extension.getURL("MapViewIcon.jpg")+'" alt="Map View" style="height:24px;width:92px;">').insertAfter("#pageContent_weeklyButton")
-		document.body.innerHTML=document.body.innerHTML.replace('<div class="title">Schedule-List</div>',"")
-
-			$(".BuildingLocationLink").unbind()
-			$(".BuildingLocationLink").bind("click",function(){showMap(this.innerHTML)})
-		
-		$("#MapViewIcon").bind("click",function(){showMap()})
+        document.body.innerHTML=document.body.innerHTML.replace('<div class="title">Schedule-List</div>',"")
+	               $(".BuildingLocationLink").unbind()
+		           $(".BuildingLocationLink").bind("click",function(){showMap(this.innerHTML)})
+		// MapView Icon goes away if you click other tab
+        
+		$("#MapViewIcon").bind("click",function() {
+            document.getElementById('myNav').style.width = '100%';
+        });
+        
+        $("#closebtn").bind("click", function() {
+            document.getElementById('myNav').style.width = '0%';
+        });
 
 	}
 	}, 10);
 });
-
-
 
 
 
@@ -90,9 +99,29 @@ coords = [
 ["T.B.A.",[0,0]],
 ];
 
+/*
+function appendMapDiv() {
+    
+    var slide = document.createElement("div");
+    slide.className = "slideDiv";
+    
+    //slide.load('mapSlideOut.html');
+    slide.show();
+    slide.animate({right:'0px'}, {queue: false, duration: 5000});
+    $(".slideDiv").innerHTML = '\
+    <div id="navBarDiv"></div> \
+    <div id="sideBarDiv"></div> \
+    <div id="mapDiv"></div> \
+    ';
+    
+    $("#navBarDiv").load('navigationBar.html');
+    $("#sideBarDiv").load('sidebar.html');
+    $("#mapDiv").app
+    }
+    */
 
 
-function w(s){
+function addToMap(s){
 	$("#map").append(s)
 }
 
@@ -115,14 +144,14 @@ function showMap(s){
 	$("#map").show()
 	building = s.split(" ")[0]
 
-	x=0;
-	y=0;
+	var x=0;
+	var y=0;
 
 	for(i=0;i<coords.length;i++){
 		if(coords[i][0]==building){
 			y = coords[i][1][1]
 			x = coords[i][1][0]
-			w("<div id='"+coords[i][0]+"' class='pin' style='top: "+y+"px; left:"+x+"px;position: absolute; background: white; font-size: 14; font-family: verdana; padding: 7px; border: 1px solid grey; border-radius: 3px;'>"+coords[i][0]+"</div>");
+			addToMap("<div id='"+coords[i][0]+"' class='pin' style='top: "+y+"px; left:"+x+"px;position: absolute; background: white; font-size: 14; font-family: verdana; padding: 7px; border: 1px solid grey; border-radius: 3px;'>"+coords[i][0]+"</div>");
 			break;
 		}
 	}
@@ -135,3 +164,24 @@ function showMap(s){
 	//$("#mapImg").src = "http://www.aw.id.ucsb.edu/maps/images/UCSB_largemap.jpg";
 
 }
+
+/*
+function mapSlideOut(s) {
+    
+    
+    var x=0;
+    var y=0;
+    
+    for(i = 0; i < classCoords.length; i++){
+        build = classCoords[i];
+        for(j = 0; j < coords.length; j++){
+            if(coords[j][0] == building) {
+                addToMap("<div id='"+coords[i][0]+"' class='pin' style='top: "+y+"px; left:"+x+"px;position: absolute; background: white; font-size: 14; font-family: verdana; padding: 7px; border: 1px solid grey; border-radius: 3px;'>"+coords[i][0]+"</div>");
+                break;     
+            }
+        } 
+    }
+    
+   
+}
+*/
