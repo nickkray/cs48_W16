@@ -1,12 +1,14 @@
+<html> 
+<head> 
+<style type="text/css"> 
 
-<html>
-<head>
-<style> 
 
 #side {
 	position:absolute;
 	top: 0; bottom: 500px; left:0px;
 	width:177px;
+	top: 100px;
+	left: 185px;
 	background: rgb(51, 51, 255);
 	font-size: 12px;
 	color: ffff00;
@@ -87,12 +89,78 @@
 	
 }
 
-		
+#portola  {
+}		
+#ortega{
+}
+#dlg{
+}
+#carillo{
+}
+
 .show {display: block;}
+
+.button { 
+	width: 150px; 
+	padding: 10px; 
+	background-color: rgb(51,51,255); 
+	box-shadow: -8px 8px 10px 3px rgba(0,0,0,0.2); 
+	font-weight:bold; 
+	color: ffff00;
+	text-decoration:none; 
+} 
 	
-</style>
-</head>
-	<body>
+#cover{ 
+	position:fixed; 
+	top:0; 
+	left:0; 
+	background:rgba(0,0,0,0.6); 
+	z-index:5; 
+	width:100%; 
+	height:100%; 
+	display:none; 
+} 
+
+#loginScreen { 
+	height:1000px; 
+	width:1000px; 
+	margin:0 auto; 
+	position:relative; 
+	z-index:10; 
+	display:none; 
+	background: url(https://raw.githubusercontent.com/nickkray/cs48_W16/master/UCSB_largemap.jpg) no-repeat;
+	border:5px solid rgb(51,51,255); 
+	border-radius:10px; 
+} 
+
+	
+#loginScreen:target, #loginScreen:target + #cover{ 
+	display:block; 
+	opacity:2; 
+} 
+
+.cancel { 
+	display:block; 
+	position:absolute; 
+	top:3px; right:2px; 
+	background:rgb(245,245,245); 
+	color:black; 
+	height:30px; 
+	width:35px; 
+	font-size:30px; 
+	text-decoration:none; 
+	text-align:center; 
+	font-weight:bold; 
+} 
+</style> 
+</head> 
+<body> 
+<div align="center"> 
+<br><br><br><br> <a href="#loginScreen" class="button">UCSB Schedule Runner</a> 
+</div> 
+<div id="loginScreen">
+ <a href="#" class="cancel">&times;</a> </div> 
+ <div id="cover" >
 	<div id="side">
 		<h1 class="title">
 			<b><u>
@@ -121,18 +189,17 @@
 					Dining Commons
 				</button>
 				<div id="myDropdown" class="dropdown-content">
-					
-					<a href="https://static.housing.ucsb.edu/menu/carrillo/thisweekmenu.pdf"> Carillo </a>
-					<a href="https://static.housing.ucsb.edu/menu/dlg/thisweekmenu.pdf"> De La Guerra </a>
-					<a href="https://static.housing.ucsb.edu/menu/ortega/thisweekmenu.pdf"> Ortega </a>
-					<a href="https://en.wikipedia.org/wiki/Toilet"> Portola </a>
+					<a id="carillo" onclick="carillo()" href="#loginScreen"> Carillo </a>
+					<a id="dlg" onclick ="dlg()"href="#loginScreen"> De La Guerra </a>
+					<a id="ortega" onclick ="ortega()"href="#loginScreen"> Ortega </a>
+					<a id="portola" onclick ="portola()" href="#loginScreen"> Portola </a>
 							
 				</div>
 			</div>
 			<button class="defaultBtn" onclick=""> Student Resourse Building </button>
 			<button class="defaultBtn" onclick=""> Student Health </button>
-			<button class="defaultBtn" onclick=""> Thunderdome </button>
-			<button class="defaultBtn" onclick="">Harder Stadium </button>
+			<button class="defaultBtn" onclick="thunderdome()"> Thunderdome </button>
+			<button class="defaultBtn" onclick="harder()">Harder Stadium </button>
 			
 			<div class="dropdown">
 			 <button onclick="dropDownFunc3()" class="dropbtn">Campus Restaurants </button>
@@ -153,32 +220,124 @@
 				
 			</div>
 			</div>
-			</div>
-	<div>
-		<img src="https://raw.githubusercontent.com/nickkray/cs48_W16/master/UCSB_largemap.jpg" class="image"> </img>
-			
-	<script>
-	
+			</div> </div> 
+ </body> 
+ <script>
+ 	
+	var count1 = 0;
+	var count2 = 0;
+	var count3 = 0;
 /* When the user clicks on the button, 
 toggle between hiding and showing the dropdown content */
 function dropDownFunc() {
     document.getElementById("myDropdown").classList.toggle("show");
-	var others = document.getElementsByClassName('dropdown-content');
-	for(int i = 0; i < others.length; i++){
-		if(others[i])
+	if(count1 == 1)
+		count1 = 0;
+	else if(count1 == 0){
+		count1 = 1;
+	}
+
+	if(count2 == 1){
+		document.getElementById("myDropdown2").classList.toggle("show");
+		count2 = 0;
+	}
+	
+	if(count3 == 1){
+		document.getElementById("myDropdown3").classList.toggle("show");
+		count3 = 0;
+	}
+	
+	
+}
+function harder(){
+	if(window.confirm("Would you like to see Harder Stadium's events for this week?")){
+		window.location='https://events.ucsb.edu/this-weeks-events/';
 	}
 }
+function thunderdome(){
+	if(window.confirm("Would you like to see the Thunderdome's upcoming events?")){
+		window.location='http://www.eventscenter.ucsb.edu/';
+	}
+}
+function carillo(){
+	if(window.confirm("Would you like to see Carillo's menu for this week?")){
+		var carillo = document.getElementById("carillo");
+		carillo.setAttribute('href', 'https://static.housing.ucsb.edu/menu/carrillo/thisweekmenu.pdf');
+		
+	}
+	else{
+		var carillo = document.getElementById("carillo");
+		carillo.setAttribute('href', '#loginScreen');
+	}
+}
+function portola(){
+	if(window.confirm("Would you like to see Portola's menu for this week?")){
+		var portola = document.getElementById("portola");
+		portola.setAttribute('href', 'https://en.wikipedia.org/wiki/Toilet')
+		
+	}
 
+}
+function dlg(){
+	if(window.confirm("Would you like to see De La Guerra's menu for this week?")){
+		var dlg = document.getElementById("dlg");
+		dlg.setAttribute('href', 'https://static.housing.ucsb.edu/menu/dlg/thisweekmenu.pdf');
+		
+	}
+	
+}
+function ortega(){
+	if(window.confirm("Would you like to see Ortega's menu for this week?")){
+		var ortega = document.getElementById("ortega");
+		ortega.setAttribute('href', 'https://static.housing.ucsb.edu/menu/ortega/thisweekmenu.pdf');
+		
+	}
+}
 function dropDownFunc2() {
     document.getElementById("myDropdown2").classList.toggle("show");
+	if(count2 == 1)
+		count2 = 0;
+	else if(count2 == 0){
+		count2 = 1;
+	}
+	if(count1 == 1){
+		document.getElementById("myDropdown").classList.toggle("show");
+		count1 = 0;
+	}
+	
+	if(count3 == 1){
+		document.getElementById("myDropdown3").classList.toggle("show");
+		count3 = 0;
+		
+	}
 }
 
 function dropDownFunc3() {
     document.getElementById("myDropdown3").classList.toggle("show");
+	
+	if(count3 == 1)
+		count3 = 0;
+	else if(count3 == 0){
+		count3 = 1;
+	}
+	if(count2 == 1){
+		document.getElementById("myDropdown2").classList.toggle("show");
+		count2 = 0;
+	}
+	
+	if(count1 == 1){
+		document.getElementById("myDropdown").classList.toggle("show");
+		count1 = 0;
+	}
 }
+
 // Close the dropdown if the user clicks outside of it
 window.onclick = function(event) {
-  if (!event.target.matches('.dropbtn')) {
+if (!event.target.matches('.dropbtn')) {
+	
+	count1 = 0;
+	count2 = 0;
+	count3 = 0;
     var dropdowns = document.getElementsByClassName("dropdown-content");
     var i;
     for (i = 0; i < dropdowns.length; i++) {
@@ -189,10 +348,7 @@ window.onclick = function(event) {
     }
   }
 
+
 }
-
-
 </script>
-
-</body>
-</html>
+ </html>
