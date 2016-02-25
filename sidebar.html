@@ -8,7 +8,7 @@
 	top: 0; bottom: 500px; left:0px;
 	width:177px;
 	top: 100px;
-	left: 185px;
+	left: 0px;
 	background: rgb(51, 51, 255);
 	font-size: 12px;
 	color: ffff00;
@@ -168,59 +168,65 @@
 			</b></u>
 		</h1>
 			
-			<div class="dropdown">
-			<button onclick="dropDownFunc2()" class="dropbtn">
-					University Center 
-			</button>
-				<div id="myDropdown2" class="dropdown-content">
-					<a href="#" > The Hub </a>
-					<a href="#" > UCSB Bookstore </a>
-					<a href="#" > Corwin Pavillion </a>
-				</div>
-			</div>
+		<div class="dropdown">
+		  <button onclick="dropDownFunc2()" class="dropbtn">
+		    University Center 
+		  </button>
+		  
+		  <div id="myDropdown2" class="dropdown-content">
+		    <a href="#" > The Hub </a>
+		    <a href="#" > UCSB Bookstore </a>
+		    <a href="#" > Corwin Pavillion </a>
+		  </div>
+
+		</div>
 			
-			<button class="defaultBtn" onclick=""> Bus Loop </button>
+		<button class="defaultBtn" onclick=""> Bus Loop </button>
+		
+		
+		<button class="defaultBtn" onclick=""> Recreation Center </button>
+		
+		<div class="dropdown">
+		  <button onclick="dropDownFunc()" class="dropbtn">
+		    Dining Commons
+		  </button>
+		  
+		  <div id="myDropdown" class="dropdown-content">
+		    <a id="carillo" onclick="carillo()" href="#loginScreen"> Carillo </a>
+		    <a id="dlg" onclick ="dlg()"href="#loginScreen"> De La Guerra </a>
+		    <a id="ortega" onclick ="ortega()"href="#loginScreen"> Ortega </a>
+		    <a id="portola" onclick ="portola()" href="#loginScreen"> Portola </a>						
+		  </div>
 			
+		</div>
 			
-			<button class="defaultBtn" onclick=""> Recreation Center </button>
+		<button class="defaultBtn" onclick=""> Student Resourse Building </button>
+		<button class="defaultBtn" onclick=""> Student Health </button>
+		<button class="defaultBtn" onclick="thunderdome()"> Thunderdome </button>
+		<button class="defaultBtn" onclick="harder()">Harder Stadium </button>
 			
-			<div class="dropdown">
-				<button onclick="dropDownFunc()" class="dropbtn">
-					Dining Commons
-				</button>
-				<div id="myDropdown" class="dropdown-content">
-					<a id="carillo" onclick="carillo()" href="#loginScreen"> Carillo </a>
-					<a id="dlg" onclick ="dlg()"href="#loginScreen"> De La Guerra </a>
-					<a id="ortega" onclick ="ortega()"href="#loginScreen"> Ortega </a>
-					<a id="portola" onclick ="portola()" href="#loginScreen"> Portola </a>
-							
-				</div>
-			</div>
-			<button class="defaultBtn" onclick=""> Student Resourse Building </button>
-			<button class="defaultBtn" onclick=""> Student Health </button>
-			<button class="defaultBtn" onclick="thunderdome()"> Thunderdome </button>
-			<button class="defaultBtn" onclick="harder()">Harder Stadium </button>
-			
-			<div class="dropdown">
-			 <button onclick="dropDownFunc3()" class="dropbtn">Campus Restaurants </button>
-			<div id="myDropdown3" class="dropdown-content">
-				<a href="#">Courtyard Cafe</a>
-				<a href="#">Coral Tree Cafe</a>
-				<a href="#CS">Corner Store </a>
-				<a href="#Bretz">Die Bretzel </a>
-				<a href="#JJ">Jamba Juice</a>
-				<a href="#">Nicoletti's</a>
-				<a href="#Panda">Panda Express </a>
-				<a href="#">Root 217</a>
-				<a href="#">Romaine's</a>
-				<a href="#">Santorini Island Grill</a>
-				<a href="#">Subway</a>
-				<a href="#">Woodstock's</a>
-				<a href="#">Wahoo's</a>				
+		<div class="dropdown">
+		  <button onclick="dropDownFunc3()" class="dropbtn">Campus Restaurants </button>
+		  
+		  <div id="myDropdown3" class="dropdown-content">
+		    <a href="#">Courtyard Cafe</a>
+		    <a href="#">Coral Tree Cafe</a>
+		    <a href="#CS">Corner Store </a>
+		    <a href="#Bretz">Die Bretzel </a>
+		    <a href="#JJ">Jamba Juice</a>
+		    <a href="#">Nicoletti's</a>
+		    <a href="#Panda">Panda Express </a>
+		    <a href="#">Root 217</a>
+		    <a href="#">Romaine's</a>
+		    <a href="#">Santorini Island Grill</a>
+		    <a href="#">Subway</a>
+		    <a href="#">Woodstock's</a>
+		    <a href="#">Wahoo's</a>				
 				
-			</div>
-			</div>
-			</div> </div> 
+		  </div>
+		</div>
+	</div> 
+ </div> 
  </body> 
  <script>
  	
