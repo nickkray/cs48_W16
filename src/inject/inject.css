@@ -25,9 +25,21 @@
      padding: 0px;
  }
  
+ #closebtn {
+     position: fixed;
+     float: right;
+     font-size: 35px;
+     height: 50px;
+     text-align: center;
+     background-color: #ffffff;
+     color: #111;
+ }
+ 
  ul {
+     float: left;
      display: inline-block;
      text-align: center;
+     height: 50px;
      width: 100%;
      list-style-type: none;
      overflow: hidden;
@@ -36,6 +48,7 @@
  
  li {
      float: left;
+     height: 50px;
  }
  
  .all {
@@ -140,14 +153,4 @@
      position: absolute;
      width: 1100px;
  }
- 
- #closebtn {
-     position: fixed;
-     float: right;
-     font-size: 40px;
-     top: 20px;
-     right: 45px;
-     color: #111;
- }
- 
  

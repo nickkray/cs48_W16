@@ -9,11 +9,12 @@ chrome.extension.sendMessage({}, function(response) {
                 <div id='navBar'>\
                     <ul>\
                         <li><a class='all'>All</a></li>\
-                        <li><a href='#'>Mon</a></li>\
-                        <li><a href='#'>Tue</a></li>\
-                        <li><a href='#'>Wed</a></li>\
-                        <li><a href='#'>Thu</a></li>\
-                        <li><a href='#'>Fri</a></li>\
+                        <li><a href='#'>Monday</a></li>\
+                        <li><a href='#'>Tuesday</a></li>\
+                        <li><a href='#'>Wednesday</a></li>\
+                        <li><a href='#'>Thursday</a></li>\
+                        <li><a href='#'>Friday</a></li>\
+                        <button id='closebtn'>x</button>\
                     </ul>\
                 </div>\
                 <div id='sidebar'>\
@@ -65,7 +66,6 @@ chrome.extension.sendMessage({}, function(response) {
                <div id='mapDiv'>\
                         <img id='mapImg1' src='"+chrome.extension.getURL("UCSB_largemap.jpg")+"'>\
                </div>\
-               <button id='closebtn'>x</button>\
              </div>").insertAfter("#MainForm");
 
 /*
