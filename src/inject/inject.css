@@ -1,3 +1,153 @@
 /**
  * Place your custom CSS styles here.
  **/
+ 
+ 
+ #schedRunner {
+     height: 100%;
+     width: 0%;
+     position: fixed;
+     z-index: 1;
+     top: 0;
+     left: 0;
+     background: #d2d2d2;
+     overflow-x: hidden;
+     transition: 0.5s;
+ }
+ 
+ 
+ /* CSS for navBar and nested elements */
+ #navBar{
+     position: absolute;
+     left: 255px;
+     height: 70px;
+     width: 100%;
+     padding: 0px;
+ }
+ 
+ ul {
+     display: inline-block;
+     text-align: center;
+     width: 100%;
+     list-style-type: none;
+     overflow: hidden;
+     background-color: #333;
+ }
+ 
+ li {
+     float: left;
+ }
+ 
+ .all {
+     background-color: #2504B4;
+     display: block;
+     color: white;
+     text-align: center;
+     font-size:  16px;
+     padding: 14px 16px;
+     text-decoration: none;
+ }
+ 
+ li a {
+     display: block;
+     color: white;
+     text-align: center;
+     font-size: 16px;
+     padding: 14px 16px;
+     text-decoration: none;
+ }
+ 
+ 
+ /* CSS for sidebar and nested elements */
+ #sidebar {
+     position: absolute;
+     top: 70px;
+     float: left;
+     width: 244px;
+     background-color: rgb(115,115,115);
+     border: 2px solid rgb(0,0,0);
+     padding: 2px;
+ }
+ 
+ #sidebarTitle {
+     font-size: 20px;
+     margin-bottom: 25px;
+     padding: 5px;
+     color: #ffff00;
+     font: Garamond;
+ }
+ 
+ .dropdown {
+     position: relative;
+     display: inline-block;
+ }
+ 
+ .defaultBtn {
+     background-color: rgb(69,106,209);
+     color: black;
+     width: 100%;
+     text-align: left;
+     font-size: 14px; 
+     padding: 10px;
+     border: none;
+     cursor: pointer;
+     font: Garamond;
+ }
+ 
+ .dropbtn {
+     background-color: rgb(69,106,209);
+     color: black;
+     width: 100%;
+     text-align: left;
+     font-size: 14px;
+     padding: 10px;
+     border: none;
+     cursor: pointer;
+     font: Garamond;
+ }
+ 
+ #sidebar a {
+     color: black;
+     padding: 12px 16px;
+     text-decoration: none;
+     display: block;
+     font: Garamond;
+ }
+ 
+ .dropdown-content {
+     display: none;
+     position: absolute;
+     z-index: 100;
+     left: 177px;
+     background-color: #f9f9f9;
+     max-width: 100px;
+     overflow: auto;
+     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+ }
+ 
+ /* CSS for mapDiv and nested elements */
+ #mapDiv{
+     float: left;
+     position: absolute;
+     top: 70px;
+     left: 255px;
+     width: 1100px;
+     height: 625px;
+     overflow: auto;
+ }
+ 
+ #mapImg1 {
+     position: absolute;
+     width: 1100px;
+ }
+ 
+ #closebtn {
+     position: fixed;
+     float: right;
+     font-size: 40px;
+     top: 20px;
+     right: 45px;
+     color: #111;
+ }
+ 
+ 

@@ -5,69 +5,67 @@ chrome.extension.sendMessage({}, function(response) {
         
         
         // Add new div that slides out with map, sidebar, and navigation bar.
-            $("<div id='schedRunner' style='height: 100%; width: 0%; position: fixed; z-index: 1; left: 0; top: 0; background: rgb(211,211,211); overflow-x: hidden; transition: 0.5s;'>\
-                <div id='navBar' style='float: top; height: 50px; margin-left: 222px; width: 100%; padding: 0px;'>\
-                    <ul style=' position: fixed; list-style-type: none; overflow: hidden; background-color: #333;'>\
-                        <li style='float: left;'><a class='All' style='background-color: #2504B4; display: block; color: white; text-align: center; padding: 14px 16px; text-decoration: none;'>All</a></li>\
-                        <li style='float: left;'><a href='#' style='display: block; color: white; text-align: center; padding: 14px 16px; text-decoration: none;'>Mon</a></li>\
-                        <li style='float: left;'><a href='#' style='display: block; color: white; text-align: center; padding: 14px 16px; text-decoration: none;'>Tue</a></li>\
-                        <li style='float: left;'><a href='#' style='display: block; color: white; text-align: center; padding: 14px 16px; text-decoration: none;'>Wed</a></li>\
-                        <li style='float: left;'><a href='#' style='display: block; color: white; text-align: center; padding: 14px 16px; text-decoration: none;'>Thu</a></li>\
-                        <li style='float: left;'><a href='#' style='display: block; color: white; text-align: center; padding: 14px 16px; text-decoration: none;'>Fri</a></li>\
-                        <li style='float: left;'><a href='#' style='display: block; color: white; text-align: center; padding: 14px 16px; text-decoration: none;'>Sat</a></li>\
-                        <li style='float: left;'><a href='#' style='display: block; color: white; text-align: center; padding: 14px 16px; text-decoration: none;'>Sun</a></li>\
+            $("<div id='schedRunner'>\
+                <div id='navBar'>\
+                    <ul>\
+                        <li><a class='all'>All</a></li>\
+                        <li><a href='#'>Mon</a></li>\
+                        <li><a href='#'>Tue</a></li>\
+                        <li><a href='#'>Wed</a></li>\
+                        <li><a href='#'>Thu</a></li>\
+                        <li><a href='#'>Fri</a></li>\
                     </ul>\
                 </div>\
-                <div id='sidebar' style='position: fixed; float: left; width: 200px; background-color: rgb(115,115,115); border: 2px solid rgb(0,0,0); padding: 2px;'>\
-                    <h1 id='sidebarTitle' style='font-size: 20px; margin-bottom: 25px; padding: 5px; color: #ffff00; font: Garamond;'>\
+                <div id='sidebar'>\
+                    <h1 id='sidebarTitle'>\
                         <b><u>Popular Locations</b></u>\
                     </h1>\
-                    <div class='dropdown' style='position: relative; display: inline-block;'>\
-                        <button class='dropbtn' style='background-color: rgb(69,106,209); color: black; width: 100%; text-align: left; font-size: 14px; border: none; cursor: pointer; font: Garamond;'>University Center</button>\
-                        <div id ='myDropDown2' class='dropdown-content' style='display: none; position: absolute; z-index: 100; left: 177px; background-color: #f9f9f9; max-width: 100px; overflow: auto; box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2)'>\
-                            <a href='#' style='color: black; padding: 12px 16px; text-decoration: none; display: block; font: Garamond;'>The Hub</a>\
-                            <a href='#' style='color: black; padding: 12px 16px; text-decoration: none; display: block; font: Garamond;'>UCSB Bookstore</a>\
-                            <a href='#' style='color: black; padding: 12px 16px; text-decoration: none; display: block; font: Garamond;'>Corwin Pavillion</a>\
+                    <div class='dropdown'>\
+                        <button class='dropbtn'>University Center</button>\
+                        <div id ='myDropDown2' class='dropdown-content'>\
+                            <a href='#'>The Hub</a>\
+                            <a href='#'>UCSB Bookstore</a>\
+                            <a href='#'>Corwin Pavillion</a>\
                         </div>\
                     </div>\
-                    <button class='defaultBtn' style='background-color: rgb(69,106,209); color: black; width: 100%; text-align: left; font-size: 14px; border: none; cursor: pointer; font: Garamond;'>Bus Loop</button>\
-                    <button class='defaultBtn' style='background-color: rgb(69,106,209); color: black; width: 100%; text-align: left; font-size: 14px; border: none; cursor: pointer; font: Garamond;'>Recreation Center</button>\
-                    <div class='dropdown' style='position: relative; display: inline-block;'>\
-                        <button class='dropbtn'  style='background-color: rgb(69,106,209); color: black; width: 100%; text-align: left; font-size: 14px; border: none; cursor: pointer; font: Garamond;'>Dining Commons</button>\
-                        <div id='myDropdown' class='dropdown-content' style='display: none; position: absolute; z-index: 100; left: 177px; background-color: #f9f9f9; max-width: 100px; overflow: auto; box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2)'>\
-                            <a id='carillo' href='#' style='color: black; padding: 12px 16px; text-decoration: none; display: block; font: Garamond'>Carillo</a>\
-                            <a id='dlg' href='#' style='color: black; padding: 12px 16px; text-decoration: none; display: block; font: Garamond'>De La Guerra</a>\
-                            <a id='ortega' href='#' style='color: black; padding: 12px 16px; text-decoration: none; display: block; font: Garamond'>Ortega</a>\
-                            <a id='portola' href='#' style='color: black; padding: 12px 16px; text-decoration: none; display: block; font: Garamond'>Portola</a>\
+                    <button class='defaultBtn'>Bus Loop</button>\
+                    <button class='defaultBtn'>Recreation Center</button>\
+                    <div class='dropdown'>\
+                        <button class='dropbtn'>Dining Commons</button>\
+                        <div id='myDropdown' class='dropdown-content'>\
+                            <a id='carillo' href='#'>Carillo</a>\
+                            <a id='dlg' href='#'>De La Guerra</a>\
+                            <a id='ortega' href='#'>Ortega</a>\
+                            <a id='portola' href='#'>Portola</a>\
                         </div>\
                     </div>\
-                    <button class='defaultBtn' style='background-color: rgb(69,106,209); color: black; width: 100%; text-align: left; font-size: 14px; border: none; cursor: pointer; font: Garamond;'>Student Resource Building</button>\
-                    <button class='defaultBtn' style='background-color: rgb(69,106,209); color: black; width: 100%; text-align: left; font-size: 14px; border: none; cursor: pointer; font: Garamond;'>Student Health Center</button>\
-                    <button class='defaultBtn' style='background-color: rgb(69,106,209); color: black; width: 100%; text-align: left; font-size: 14px; border: none; cursor: pointer; font: Garamond;'>Thunderdome</button>\
-                    <button class='defaultBtn' style='background-color: rgb(69,106,209); color: black; width: 100%; text-align: left; font-size: 14px; border: none; cursor: pointer; font: Garamond;'>Harder Stadium</button>\
-                    <div class='dropdown' style='position: relative; display: inline-block;'>\
-                        <button class='dropbtn' style='background-color: rgb(69,106,209); color: black; width: 100%; text-align: left; font-size: 14px; border: none; cursor: pointer; font: Garamond;'>Campus Restaurants</button>\
-                        <div id='myDropdown3' class='dropdown-content' style='display: none; position: absolute; z-index: 100; left: 177px; background-color: #f9f9f9; max-width: 100px; overflow: auto; box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2)'>\
-                            <a href='#' style='color: black; padding: 12px 16px; text-decoration: none; display: block; font: Garamond'>Courtyard Cafe</a>\
-                            <a href='#' style='color: black; padding: 12px 16px; text-decoration: none; display: block; font: Garamond'>Coral Tree Cafe</a>\
-                            <a href='#' style='color: black; padding: 12px 16px; text-decoration: none; display: block; font: Garamond'>Corner Store</a>\
-                            <a href='#' style='color: black; padding: 12px 16px; text-decoration: none; display: block; font: Garamond'>Die Bretzel</a>\
-                            <a href='#' style='color: black; padding: 12px 16px; text-decoration: none; display: block; font: Garamond'>Jamba Juice</a>\
-                            <a href='#' style='color: black; padding: 12px 16px; text-decoration: none; display: block; font: Garamond'>Nicoletti's</a>\
-                            <a href='#' style='color: black; padding: 12px 16px; text-decoration: none; display: block; font: Garamond'>Panda Express</a>\
-                            <a href='#' style='color: black; padding: 12px 16px; text-decoration: none; display: block; font: Garamond'>Root 217</a>\
-                            <a href='#' style='color: black; padding: 12px 16px; text-decoration: none; display: block; font: Garamond'>Romaine's</a>\
-                            <a href='#' style='color: black; padding: 12px 16px; text-decoration: none; display: block; font: Garamond'>Santorini Island Grill</a>\
-                            <a href='#' style='color: black; padding: 12px 16px; text-decoration: none; display: block; font: Garamond'>Subway</a>\
-                            <a href='#' style='color: black; padding: 12px 16px; text-decoration: none; display: block; font: Garamond'>Woodstock's</a>\
-                            <a href='#' style='color: black; padding: 12px 16px; text-decoration: none; display: block; font: Garamond'>Wahoo's</a>\
+                    <button class='defaultBtn'>Student Resource Building</button>\
+                    <button class='defaultBtn'>Student Health Center</button>\
+                    <button class='defaultBtn'>Thunderdome</button>\
+                    <button class='defaultBtn'>Harder Stadium</button>\
+                    <div class='dropdown'>\
+                        <button class='dropbtn'>Campus Restaurants</button>\
+                        <div id='myDropdown3' class='dropdown-content'>\
+                            <a href='#'>Courtyard Cafe</a>\
+                            <a href='#'>Coral Tree Cafe</a>\
+                            <a href='#'>Corner Store</a>\
+                            <a href='#'>Die Bretzel</a>\
+                            <a href='#'>Jamba Juice</a>\
+                            <a href='#'>Nicoletti's</a>\
+                            <a href='#'>Panda Express</a>\
+                            <a href='#'>Root 217</a>\
+                            <a href='#'>Romaine's</a>\
+                            <a href='#'>Santorini Island Grill</a>\
+                            <a href='#'>Subway</a>\
+                            <a href='#'>Woodstock's</a>\
+                            <a href='#'>Wahoo's</a>\
                         </div>\
                     </div>\
                </div>\
-               <div id='mapDiv' style='float: right;'>\
-                        <img id='mapImg1' style='position: relative; width: 1200px;' src='"+chrome.extension.getURL("UCSB_largemap.jpg")+"'>\
+               <div id='mapDiv'>\
+                        <img id='mapImg1' src='"+chrome.extension.getURL("UCSB_largemap.jpg")+"'>\
                </div>\
-               <button id='closebtn' style='position: absolute; float: right; font-size: 40px; top: 20px; right: 45px; color: #111;'>x</button>\
+               <button id='closebtn'>x</button>\
              </div>").insertAfter("#MainForm");
 
 /*
@@ -75,11 +73,14 @@ chrome.extension.sendMessage({}, function(response) {
 		          <img id='mapImg2' style='position: absolute; width: 800px;' src='"+chrome.extension.getURL("UCSB_largemap.jpg")+"'>\
 		      </div>").insertBefore("#content");
 
+*/
+
 		$("<img id='MapViewIcon' src='"+chrome.extension.getURL("MapViewIcon.jpg")+"' alt='Map View' style='height:24px;width:92px;'>").insertAfter("#pageContent_weeklyButton")
         document.body.innerHTML=document.body.innerHTML.replace('<div class="title">Schedule-List</div>',"")
 	               $(".BuildingLocationLink").unbind()
 		           $(".BuildingLocationLink").bind("click",function(){showMap(this.innerHTML)})
 		// MapView Icon goes away if you click other tab
+        
         
 		$("#MapViewIcon").bind("click",function() {
             document.getElementById('schedRunner').style.width = '100%';
@@ -97,7 +98,6 @@ chrome.extension.sendMessage({}, function(response) {
 			$(".BuildingLocationLink").unbind()
 			$(".BuildingLocationLink").bind("click",function(){showMap(this.innerHTML)})
 			$("#closeX").bind("click",function(){hideMap()})
-*/
 
 	}
 	}, 10);
