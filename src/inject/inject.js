@@ -70,6 +70,7 @@ chrome.extension.sendMessage({}, function(response) {
                <button id='closebtn' style='position: absolute; float: right; font-size: 40px; top: 20px; right: 45px; color: #111;'>x</button>\
              </div>").insertAfter("#MainForm");
 
+/*
 			$("<div id='map' style='position: relative; display: none; background: rgb(230,230,230); width: 600px; height: 600px; overflow: auto; '>\
 		          <img id='mapImg2' style='position: absolute; width: 800px;' src='"+chrome.extension.getURL("UCSB_largemap.jpg")+"'>\
 		      </div>").insertBefore("#content");
@@ -87,6 +88,16 @@ chrome.extension.sendMessage({}, function(response) {
         $("#closebtn").bind("click", function() {
             document.getElementById('schedRunner').style.width = '0%';
         });
+
+			$("<div id='closeX' style='cursor: pointer; z-index:5; display:none;left: 579px;top: 3px;position: relative;padding-top: 1px;padding-bottom: 1px;width: 14px;font-size: 10pt;font-size: 14;text-align: center;border: 1px solid black; border-radius: 2px;'>x</div><div id='map' style='position: relative; display: none; background: rgb(230,230,230); width: 600px; height: 600px; overflow: auto; '>\
+		<img id='mapImg' style='margin-top: -18px; position: absolute; width: 800px;' src='"+chrome.extension.getURL("UCSB_largemap.jpg")+"'>\
+		</div>").insertBefore("#content")
+
+
+			$(".BuildingLocationLink").unbind()
+			$(".BuildingLocationLink").bind("click",function(){showMap(this.innerHTML)})
+			$("#closeX").bind("click",function(){hideMap()})
+*/
 
 	}
 	}, 10);
@@ -196,14 +207,17 @@ y = coords[i][1][1]
 
 
 function hideMap(){
-	$("#content").hide()
-	$("#map").show()
+	$("#content").show()
+	$("#map").hide()
 	$(".pin").remove()
+	$("#closeX").hide()
 }
 
 function showMap(s){
 	$("#content").hide()
 	$("#map").show()
+	$("#closeX").show()
+
 	building = s.split(" ")[0]
 
 	var x=0;

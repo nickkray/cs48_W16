@@ -1,5 +1,8 @@
 <html> 
 <head> 
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+
 <style type="text/css"> 
 
 
@@ -62,17 +65,18 @@
 .dropdown {
     position: relative;
     display: inline-block;
+
 }
 
 .dropdown-content {
 	display: none;
     position: absolute;
-	z-index: 100;
 	left: 177px;
     background-color: #f9f9f9;
     max-width: 100px;
     overflow: auto;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 999;
     
 }
 
@@ -169,11 +173,11 @@
 		</h1>
 			
 		<div class="dropdown">
-		  <button onclick="dropDownFunc2()" class="dropbtn">
+		  <button class="dropbtn" id='ucen'>
 		    University Center 
 		  </button>
 		  
-		  <div id="myDropdown2" class="dropdown-content">
+		  <div id="ucenDropdown" class="dropdown-content">
 		    <a href="#" > The Hub </a>
 		    <a href="#" > UCSB Bookstore </a>
 		    <a href="#" > Corwin Pavillion </a>
@@ -187,15 +191,15 @@
 		<button class="defaultBtn" onclick=""> Recreation Center </button>
 		
 		<div class="dropdown">
-		  <button onclick="dropDownFunc()" class="dropbtn">
+		  <button class="dropbtn" id='dining'>
 		    Dining Commons
 		  </button>
 		  
-		  <div id="myDropdown" class="dropdown-content">
-		    <a id="carillo" onclick="carillo()" href="#loginScreen"> Carillo </a>
-		    <a id="dlg" onclick ="dlg()"href="#loginScreen"> De La Guerra </a>
-		    <a id="ortega" onclick ="ortega()"href="#loginScreen"> Ortega </a>
-		    <a id="portola" onclick ="portola()" href="#loginScreen"> Portola </a>						
+		  <div id="diningDropdown" class="dropdown-content">
+		    <a id="carillo" onclick="d('carrillo')" href="#loginScreen"> Carillo </a>
+		    <a id="dlg" onclick ="d('dlg')"href="#loginScreen"> De La Guerra </a>
+		    <a id="ortega" onclick ="d('ortega')" href="#loginScreen"> Ortega </a>
+		    <a id="portola" onclick ="d('portola')" href="#loginScreen"> Portola </a>						
 		  </div>
 			
 		</div>
@@ -205,10 +209,10 @@
 		<button class="defaultBtn" onclick="thunderdome()"> Thunderdome </button>
 		<button class="defaultBtn" onclick="harder()">Harder Stadium </button>
 			
-		<div class="dropdown">
-		  <button onclick="dropDownFunc3()" class="dropbtn">Campus Restaurants </button>
+		<div class="dropdown" id='campus'>
+		  <button class="dropbtn">Campus Restaurants </button>
 		  
-		  <div id="myDropdown3" class="dropdown-content">
+		  <div id="campusDropdown" class="dropdown-content">
 		    <a href="#">Courtyard Cafe</a>
 		    <a href="#">Coral Tree Cafe</a>
 		    <a href="#CS">Corner Store </a>
@@ -229,32 +233,7 @@
  </div> 
  </body> 
  <script>
- 	
-	var count1 = 0;
-	var count2 = 0;
-	var count3 = 0;
-/* When the user clicks on the button, 
-toggle between hiding and showing the dropdown content */
-function dropDownFunc() {
-    document.getElementById("myDropdown").classList.toggle("show");
-	if(count1 == 1)
-		count1 = 0;
-	else if(count1 == 0){
-		count1 = 1;
-	}
 
-	if(count2 == 1){
-		document.getElementById("myDropdown2").classList.toggle("show");
-		count2 = 0;
-	}
-	
-	if(count3 == 1){
-		document.getElementById("myDropdown3").classList.toggle("show");
-		count3 = 0;
-	}
-	
-	
-}
 function harder(){
 	if(window.confirm("Would you like to see Harder Stadium's events for this week?")){
 		window.location='https://events.ucsb.edu/this-weeks-events/';
@@ -265,85 +244,24 @@ function thunderdome(){
 		window.location='http://www.eventscenter.ucsb.edu/';
 	}
 }
-function carillo(){
-	if(window.confirm("Would you like to see Carillo's menu for this week?")){
-		var carillo = document.getElementById("carillo");
-		carillo.setAttribute('href', 'https://static.housing.ucsb.edu/menu/carrillo/thisweekmenu.pdf');
-		
-	}
-	else{
-		var carillo = document.getElementById("carillo");
-		carillo.setAttribute('href', '#loginScreen');
-	}
-}
-function portola(){
-	if(window.confirm("Would you like to see Portola's menu for this week?")){
-		var portola = document.getElementById("portola");
-		portola.setAttribute('href', 'https://en.wikipedia.org/wiki/Toilet')
-		
-	}
 
-}
-function dlg(){
-	if(window.confirm("Would you like to see De La Guerra's menu for this week?")){
-		var dlg = document.getElementById("dlg");
-		dlg.setAttribute('href', 'https://static.housing.ucsb.edu/menu/dlg/thisweekmenu.pdf');
-		
-	}
-	
-}
-function ortega(){
-	if(window.confirm("Would you like to see Ortega's menu for this week?")){
-		var ortega = document.getElementById("ortega");
-		ortega.setAttribute('href', 'https://static.housing.ucsb.edu/menu/ortega/thisweekmenu.pdf');
-		
-	}
-}
-function dropDownFunc2() {
-    document.getElementById("myDropdown2").classList.toggle("show");
-	if(count2 == 1)
-		count2 = 0;
-	else if(count2 == 0){
-		count2 = 1;
-	}
-	if(count1 == 1){
-		document.getElementById("myDropdown").classList.toggle("show");
-		count1 = 0;
-	}
-	
-	if(count3 == 1){
-		document.getElementById("myDropdown3").classList.toggle("show");
-		count3 = 0;
+
+function d(s){
+	if(window.confirm("Would you like to see "+s+"'s menu for this week?")){
+		var o = document.getElementById(s);
+		o.setAttribute('href','https://static.housing.ucsb.edu/menu/'+s+'/thisweekmenu.pdf')
 		
 	}
 }
 
-function dropDownFunc3() {
-    document.getElementById("myDropdown3").classList.toggle("show");
-	
-	if(count3 == 1)
-		count3 = 0;
-	else if(count3 == 0){
-		count3 = 1;
-	}
-	if(count2 == 1){
-		document.getElementById("myDropdown2").classList.toggle("show");
-		count2 = 0;
-	}
-	
-	if(count1 == 1){
-		document.getElementById("myDropdown").classList.toggle("show");
-		count1 = 0;
-	}
-}
+
+$(".dropbtn").bind('click',function(){
+	document.getElementById(this.id+"Dropdown").classList.toggle('show')
+})
 
 // Close the dropdown if the user clicks outside of it
 window.onclick = function(event) {
 if (!event.target.matches('.dropbtn')) {
-	
-	count1 = 0;
-	count2 = 0;
-	count3 = 0;
     var dropdowns = document.getElementsByClassName("dropdown-content");
     var i;
     for (i = 0; i < dropdowns.length; i++) {
@@ -353,8 +271,6 @@ if (!event.target.matches('.dropbtn')) {
       }
     }
   }
-
-
 }
 </script>
  </html>
