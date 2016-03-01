@@ -4,7 +4,6 @@
  
  
  #schedRunner {
-     height: 100%;
      width: 0%;
      position: fixed;
      z-index: 1;
@@ -13,16 +12,19 @@
      background: #d2d2d2;
      overflow-x: hidden;
      transition: 0.5s;
+     height: 90%;
  }
  
+ .show {display: block;}
  
  /* CSS for navBar and nested elements */
  #navBar{
      position: absolute;
      left: 255px;
-     height: 70px;
+     height: 60px;
      width: 100%;
      padding: 0px;
+     top:-11px;
  }
  
  #closebtn {
@@ -30,6 +32,8 @@
      float: right;
      font-size: 35px;
      height: 50px;
+     width: 50px;
+     padding: 0px;
      text-align: center;
      background-color: #ffffff;
      color: #111;
@@ -39,24 +43,25 @@
      float: left;
      display: inline-block;
      text-align: center;
-     height: 50px;
      width: 100%;
      list-style-type: none;
      overflow: hidden;
      background-color: #333;
+    height: 40px;
+    border-radius: 0px 0px 10px 10px;
+
  }
  
  li {
      float: left;
-     height: 50px;
+     height: 30px;
  }
  
  .all {
-     background-color: #2504B4;
      display: block;
      color: white;
      text-align: center;
-     font-size:  16px;
+     font-size:  14px;
      padding: 14px 16px;
      text-decoration: none;
  }
@@ -77,8 +82,7 @@
      top: 70px;
      float: left;
      width: 244px;
-     background-color: rgb(115,115,115);
-     border: 2px solid rgb(0,0,0);
+     background: #E5EEFD;
      padding: 2px;
  }
  
@@ -86,7 +90,7 @@
      font-size: 20px;
      margin-bottom: 25px;
      padding: 5px;
-     color: #ffff00;
+     color: rgb(40,40,40);
      font: Garamond;
  }
  
@@ -96,7 +100,6 @@
  }
  
  .defaultBtn {
-     background-color: rgb(69,106,209);
      color: black;
      width: 100%;
      text-align: left;
@@ -118,17 +121,26 @@
      cursor: pointer;
      font: Garamond;
  }
+
+
+ .dropdown-content a {
+     color: black;
+     padding: 12px 16px;
+     text-decoration: none;
+     display: block;
+     font: Garamond;
+}
  
  #sidebar a {
      color: black;
-     padding: 12px 16px;
+     padding: 4px 8px;
      text-decoration: none;
      display: block;
      font: Garamond;
  }
  
  .dropdown-content {
-     display: none;
+     visibility: hidden;
      position: absolute;
      z-index: 100;
      left: 177px;
@@ -145,7 +157,7 @@
      top: 70px;
      left: 255px;
      width: 1100px;
-     height: 625px;
+     height: 90%;
      overflow: auto;
  }
  
