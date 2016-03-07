@@ -41,6 +41,7 @@
   ],
    "web_accessible_resources": [
        "UCSB_largemap.jpg",
-       "MapViewIcon.jpg"
+       "MapViewIcon.jpg",
+       "icons/*"
      ]
 }

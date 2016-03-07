@@ -9,10 +9,10 @@
      z-index: 1;
      top: 0;
      left: 0;
-     background: #d2d2d2;
-     overflow-x: hidden;
+     background: rgb(240,240,240);
+     overflow: hidden;
      transition: 0.5s;
-     height: 90%;
+     height: 100%;
  }
  
  .show {display: block;}
@@ -31,12 +31,14 @@
      position: absolute;
      float: right;
      font-size: 35px;
-     height: 50px;
-     width: 50px;
+     height: 40px;
+     width: 40px;
      padding: 0px;
      text-align: center;
      background-color: #ffffff;
      color: #111;
+     border-radius: 3px;
+     font-size: 15pt;
  }
  
  ul {
@@ -108,6 +110,9 @@
      border: none;
      cursor: pointer;
      font: Garamond;
+     width: 202px;
+     display: block;
+     border-radius: 0px 3px 3px 0px;
  }
  
  .dropbtn {
@@ -120,6 +125,7 @@
      border: none;
      cursor: pointer;
      font: Garamond;
+     border-radius: 0px 3px 3px 0px;
  }
 
 
@@ -157,8 +163,9 @@
      top: 70px;
      left: 255px;
      width: 1100px;
-     height: 90%;
+     height: 85%;
      overflow: auto;
+     border-radius: 5px;
  }
  
  #mapImg1 {
