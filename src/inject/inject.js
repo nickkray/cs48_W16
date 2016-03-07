@@ -88,10 +88,36 @@ chrome.extension.sendMessage({}, function(response) {
 
             */
 
+            colors = [
+                "rgb(153, 204, 255)",
+                "rgb(255, 255, 153)",
+                "rgb(153, 255, 102)",
+                "#ffd699",
+                "#ffcce6",
+                "#b366ff",
+                "#ffb3b3"
+                ]
+            colorNames=[
+                "blue",
+                "gold",
+                "green",
+                "orange",
+                "pink",
+                "purple",
+                "red"
+                ]
+
+            for (h = 1; h < $("#pageContent_CourseList").children().children().length; h++){
+                hh=$("#pageContent_CourseList").children().children()[h].getElementsByTagName("td")
+                for(j=1;j<8;j++){
+                    hh[j].style.background=colors[h]
+                }
+            }
             
 
             $("<img id='MapViewIcon' src='" + chrome.extension.getURL("MapViewIcon.jpg") + "' alt='Map View' style='height:24px;width:92px;'>").insertAfter("#pageContent_weeklyButton")
-            document.body.innerHTML = document.body.innerHTML.replace('<div class="title">Schedule-List</div>', "")
+            //document.body.innerHTML = document.body.innerHTML.replace('<div class="title">Schedule-List</div>', "")
+            $("#pageContent_titleNavDiv .title").hide()
             $(".BuildingLocationLink").unbind()
             $(".BuildingLocationLink").bind("click", function() {
                     showMap(this.innerHTML)
@@ -148,6 +174,8 @@ function assignClick() {
                 showMap(this.id)
             })
 }
+
+
 
 
 coords = [
@@ -301,7 +329,7 @@ function showMap(s) {
 
 moving = false
 
-function addBuilding(building) {
+function addBuilding(building,c) {
     ratio =1.3 //aghhh correction
     var x = 0;
     var y = 0;
@@ -309,7 +337,12 @@ function addBuilding(building) {
         if (coords[i][0].toLowerCase() == building.toLowerCase()) {
             y = coords[i][1][1] * ratio
             x = coords[i][1][0] * ratio
-            addToMap("<img class='rpin' height=55 style='top: " + (y-45) + "px; left:" + (x+15) + "px;position: absolute;' src='"+chrome.extension.getURL("icons/goldpin.png")+"'><div id='" + coords[i][0] + "' class='pin' style='top: " + y + "px; left:" + x + "px;position: absolute; background: white; font-size: 14; font-family: verdana; padding: 7px; border: 1px solid grey; border-radius: 3px;'>" + coords[i][0] + "</div>");
+            if(c==undefined){
+                color="gold"
+            }else{
+                color=c
+            }
+            addToMap("<img class='rpin' height=55 style='top: " + (y-45) + "px; left:" + (x+15) + "px;position: absolute;' src='"+chrome.extension.getURL("icons/"+color+"_pin.png")+"'><div id='" + coords[i][0] + "' class='pin' style='top: " + y + "px; left:" + x + "px;position: absolute; background: white; font-size: 14; font-family: verdana; padding: 7px; border: 1px solid grey; border-radius: 3px;'>" + coords[i][0] + "</div>");
             break;
         }
     }
@@ -326,7 +359,7 @@ function addBuilding(building) {
 function addBuildings(arr) {
     console.log(arr)
     for (q = 0; q < arr.length; q++) {
-        addBuilding(arr[q])
+        addBuilding(arr[q][0],arr[q][1])
     }
 }
 
@@ -387,12 +420,12 @@ function scrape() {
 
         for (j = 0; j < lectTime.length; j++) {
             for (k = 0; k < lectLoc.length; k++) {
-                days[lectTime[j]].push(lectLoc.split(" ")[0])
+                days[lectTime[j]].push([lectLoc.split(" ")[0],colorNames[h]])
             }
         }
         for (j = 0; j < sectTime.length; j++) {
             for (k = 0; k < sectLoc.length; k++) {
-                days[sectTime[j]].push(sectLoc.split(" ")[0])
+                days[sectTime[j]].push([sectLoc.split(" ")[0],colorNames[h]])
             }
         }
 
