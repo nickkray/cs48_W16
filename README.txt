@@ -6,18 +6,19 @@ UCSB Schedule Runner
 
 INTRODUCTION:
 UCSB Schedule Runner is a Chrome extension on GOLD that places your schedule overlaid onto the campus map. 
-Pins will be dropped onto the locations of the student's classes and will be color-coded by class. 
+Pins are dropped onto the locations of the student's classes and are color-coded by class. 
 
 SYSTEM FEATURES:
+Student can click on "My Class Schedule" to see an updated class schedule on GOLD which highlights the classes to indicate the extension is working.
+Student can click on the "Map View button to see a UCSB map with all of their classes located on it.
 Student can click on tabs to see schedule for different days of the week.
-Student can click on a tab to see a map for their finals schedule.
-A parking assistance feature will pop up giving fares and operating hours for specific parking lots/garages - gives you the best option based on final destination.
-Student is able to click on any building and a picture of that building pops up.
+Student can differentiate between classes based off color of pin and color of highlighted class.
+Student can click on a specific class location and the map will appear with a dropped pin on that exact location.
 A sidebar of popular locations will pop up and if a student clicks on one of them, a pin will drop on its location.
 
 HOW TO USE:
 Student downloads extension from Chrome app store.
-When student is logged onto GOLD and on the "My Class Schedule" page there will be an icon to click for map to appear. 
+When student is logged onto GOLD and on the "My Class Schedule" page there is a "Map View" button to click for a map to appear. 
 
 HOW TO OPEN CURRENT PROJECT:
 1) Open up a new window in Google Chrome
@@ -28,4 +29,4 @@ HOW TO OPEN CURRENT PROJECT:
 6) Highlight the unzipped folder labelled schedule_runner_system
 7) Press select
 8) "UCSB Schedule Runner" should appear under extensions and already checked as enabled
-9) To see the extension in action, go to UCSB Gold -> My Class Schedule and click on a building location for one of your classes.
+9) To see the extension in action, go to UCSB Gold -> My Class Schedule and click on a building location for one of your classes or the "Map View" button to pull up the entire map extension.
